@@ -1,4 +1,6 @@
 import "./index.css";
+import { Provider } from "react-redux";
+import { store } from "./store";
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
@@ -27,14 +29,16 @@ const theme = createTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Container maxWidth={false}>
-        <Stack spacing={2}>
-          <Search />
-          <JobListings />
-        </Stack>
-      </Container>
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <Container maxWidth={false}>
+          <Stack spacing={2}>
+            <Search />
+            <JobListings />
+          </Stack>
+        </Container>
+      </ThemeProvider>
+    </Provider>
   );
 }
 
