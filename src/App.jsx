@@ -1,7 +1,41 @@
 import "./index.css";
+import Container from "@mui/material/Container";
+import Stack from "@mui/material/Stack";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import Search from "./components/Search";
+import JobListings from "./components/JobListings";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#4943d9",
+    },
+    secondary: {
+      main: "#54efc3",
+    },
+  },
+  typography: {
+    fontFamily: [
+      "Lexend",
+      "Roboto",
+      '"Helvetica Neue"',
+      "Arial",
+      "sans-serif",
+    ].join(","),
+  },
+});
 
 function App() {
-  return <></>;
+  return (
+    <ThemeProvider theme={theme}>
+      <Container maxWidth={false}>
+        <Stack spacing={2}>
+          <Search />
+          <JobListings />
+        </Stack>
+      </Container>
+    </ThemeProvider>
+  );
 }
 
 export default App;
