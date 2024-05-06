@@ -1,7 +1,7 @@
 import TextField from "@mui/material/TextField";
 
 export default function InputField(props) {
-  const { label, name, value, onChange } = props;
+  const { label, name, value, onChange, disabled = false } = props;
   return (
     <TextField
       fullWidth
@@ -11,6 +11,7 @@ export default function InputField(props) {
       name={name}
       value={value}
       onChange={onChange}
+      disabled={disabled}
     />
   );
 }

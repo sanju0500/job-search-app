@@ -7,12 +7,11 @@ import Button from "@mui/material/Button";
 import Expandable from "./Expandable";
 
 const paperSx = {
-  maxWidth: 400,
   display: "flex",
   flexDirection: "column",
 };
 
-export default function JobCard({ data }) {
+export default function JobCard({ data, ref }) {
   return (
     <Paper elevation={3} sx={paperSx}>
       <CardContent>

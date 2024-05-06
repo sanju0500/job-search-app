@@ -13,8 +13,6 @@ const initialState = {
   originalData: [],
   filteredData: [],
   totalCount: null,
-  limit: 10,
-  offset: 0,
 };
 
 export const globalSlice = createSlice({
@@ -37,12 +35,6 @@ export const globalSlice = createSlice({
     setTotalCount: (state, { payload }) => {
       state.totalCount = payload;
     },
-    setLimit: (state, { payload }) => {
-      state.limit = payload;
-    },
-    setOffset: (state, { payload }) => {
-      state.offset = payload;
-    },
   },
 });
 
@@ -52,8 +44,6 @@ export const {
   setOriginalData,
   setFilteredData,
   setTotalCount,
-  setLimit,
-  setOffset,
 } = globalSlice.actions;
 
 export default globalSlice.reducer;
