@@ -1,8 +1,9 @@
-# React + Vite
+# Candidate Application Platform - Weekday Clone ⚡
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a Candidate Application Platform (Weekday's feature clone), where candidates can search for the right job based on various factors.
 
-Currently, two official plugins are available:
+Features available in this application:
+- Filtering
+- Infinite Scroll
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Checkout the application here 👉 https://sanju0500.github.io/job-search-app/
