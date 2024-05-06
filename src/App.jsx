@@ -6,6 +6,7 @@ import Stack from "@mui/material/Stack";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Search from "./components/Search";
 import JobListings from "./components/JobListings";
+import AppHeader from "./components/AppHeader";
 
 const theme = createTheme({
   palette: {
@@ -33,6 +34,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <Container maxWidth={false}>
           <Stack spacing={2}>
+            <AppHeader />
             <Search />
             <JobListings />
           </Stack>
