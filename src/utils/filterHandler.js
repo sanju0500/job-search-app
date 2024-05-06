@@ -39,14 +39,17 @@ export const filterHandler = (jobList = [], filters = {}) => {
             .trim()
             .includes(filters?.company?.toLowerCase().trim());
 
-    // Location Filter
+    // Location Filter - Skip if location is remote
     let matchesLocation =
       filters?.location?.trim() === ""
         ? true
-        : job?.location
+        : job?.location?.toLowerCase().trim() !==
+          jobTypeOptions[0].toLowerCase()
+        ? job?.location
             ?.toLowerCase()
             .trim()
-            .includes(filters?.location?.toLowerCase().trim());
+            .includes(filters?.location?.toLowerCase().trim())
+        : false;
 
     // Filtered job will have all the above values as true
     return (

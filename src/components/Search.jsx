@@ -1,25 +1,18 @@
-import { useEffect } from "react";
 import Grid from "@mui/material/Grid";
 import InputField from "../common/InputField";
 import Dropdown from "../common/Dropdown";
 import { useSelector, useDispatch } from "react-redux";
-import { setFilteredData, setFilters } from "../store/globalSlice";
+import { setFilters } from "../store/globalSlice";
 import {
   roleOptions,
   minExpOptions,
   jobTypeOptions,
   minBasePayOptions,
 } from "../utils";
-import { filterHandler } from "../utils/filterHandler";
 
 const Search = () => {
   const dispatch = useDispatch();
-  const { originalData, filters } = useSelector((store) => store.global);
-
-  useEffect(() => {
-    const updatedData = filterHandler(originalData, filters);
-    dispatch(setFilteredData(updatedData));
-  }, [originalData, filters]);
+  const { filters } = useSelector((store) => store.global);
 
   const updateFilters = (e) => {
     dispatch(setFilters({ field: e?.target?.name, value: e?.target?.value }));
@@ -78,6 +71,7 @@ const Search = () => {
           name="location"
           value={filters?.location}
           onChange={updateFilters}
+          disabled={filters?.jobType === jobTypeOptions[0]}
         />
       </Grid>
     </Grid>
